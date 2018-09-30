@@ -19,6 +19,8 @@ module.exports = function getZerosCount(number, base){
         }
     }
 
+    //console.log(primeNumbers);
+
     const primePow = [];              // массив степеней простых чисел
     let temp = base;
     for (let i = 0; i < primeNumbers.length; i++) {
@@ -28,6 +30,8 @@ module.exports = function getZerosCount(number, base){
             temp = temp / tempNum;
         }
     }
+
+    //console.log(primePow);
 
     const resultArray = [];    //массив отношений суммы степеней при простых числах к значению их степеней в основании
     for (let i = 0; i< primePow.length; i++) {
@@ -44,6 +48,8 @@ module.exports = function getZerosCount(number, base){
         } while (countTemp >= 1);
         resultArray.push(Math.floor(zerosCount / count));
     }
+
+    //console.log(resultArray);
     resultArray.sort(function (a,b) {
         return a-b;
     });
